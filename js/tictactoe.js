@@ -8,7 +8,7 @@ const player2 = "o"
 
 const game = {
   playerOne: [],
-  playerTwo: []
+  playerTwo: [],
 }
 
 
@@ -27,6 +27,8 @@ const clicks = function(e) {
     console.log(player1)
     $(this.locationClassName).text(player1)
     game.playerOne.push(player1)
+    game.playerOne.push($(event.target).attr("id"))
+    console.log($(event.target).attr("id"))
     console.log(game.playerOne)
 
 
