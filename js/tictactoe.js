@@ -6,6 +6,18 @@
 const player1 = "x"
 const player2 = "o"
 
+const winning = {
+  horizontal1: [1, 2, 3],
+  horizontal2: [4, 5, 6],
+  horizontal3: [7, 8, 9],
+
+  vertical1: [1, 4, 7],
+  vertical2: [2, 5, 8],
+
+
+
+}
+
 const game = {
   playerOne: [],
   playerTwo: [],
@@ -23,27 +35,50 @@ const clicks = function(e) {
   let locationClassName = $(event.target).attr('class')
   console.log(locationClassName)
 
+
+
+
+
   if (clickCounter % 2 === 0) {
     console.log(player1)
     $(this.locationClassName).text(player1)
-    game.playerOne.push(player1)
-    game.playerOne.push($(event.target).attr("id"))
+
+    game.playerOne.push(parseInt($(event.target).attr("id"))) // pushes the number of the box to the array
     console.log($(event.target).attr("id"))
+    console.log("Player One")
     console.log(game.playerOne)
 
 
   } else {
-    // put o in box that was clicked
     console.log(player2)
-    game.playerTwo.push(player2)
+    game.playerTwo.push(parseInt($(event.target).attr("id")))
+    console.log("Player two")
     console.log(game.playerTwo)
+  }
+
+  // finds if wins
+  if (winning.horizontal1.every(r => game.playerOne.includes(r))) {
+    console.log('Player one wins');
+  } else if (winning.horizontal1.every(r => game.playerTwo.includes(r))) {
+    console.log('Player two wins')
   }
 
 }
 
 $(".board-container").on("click", clicks)
+console.log(game.playerOne)
+
 
 // if top x 3  text includes x or player 1 - player1 wins
+
+// const found = game.playerOne.some(winning =>)
+
+let x = [1, 2, 3, 4, 6]
+let winner = [1, 2, 3]
+
+
+
+
 
 
 
