@@ -13,9 +13,10 @@ const winning = {
 
   vertical1: [1, 4, 7],
   vertical2: [2, 5, 8],
+  vertical3: [3, 6, 9],
 
-
-
+  diagonal1: [1, 5, 7],
+  diagonal2: [3, 5, 7]
 }
 
 const game = {
@@ -36,9 +37,6 @@ const clicks = function(e) {
   console.log(locationClassName)
 
 
-
-
-
   if (clickCounter % 2 === 0) {
     console.log(player1)
     $(this.locationClassName).text(player1)
@@ -57,11 +55,14 @@ const clicks = function(e) {
   }
 
   // finds if wins
-  if (winning.horizontal1.every(r => game.playerOne.includes(r))) {
+  for ( let property in winning) {
+
+  if (winning[property].every(r => game.playerOne.includes(r))) {
     console.log('Player one wins');
-  } else if (winning.horizontal1.every(r => game.playerTwo.includes(r))) {
+  } else if (winning[property].every(r => game.playerTwo.includes(r))) {
     console.log('Player two wins')
   }
+}
 
 }
 
@@ -73,8 +74,6 @@ console.log(game.playerOne)
 
 // const found = game.playerOne.some(winning =>)
 
-let x = [1, 2, 3, 4, 6]
-let winner = [1, 2, 3]
 
 
 
