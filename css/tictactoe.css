@@ -1,0 +1,81 @@
+/* body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+div {
+  display: block;
+}
+
+.game {
+  /* background-color: black; */
+  /* position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    margin-left: -300px;
+    margin-top: -370px;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+board-container {
+  width: 100%;
+  heigth: 100%;
+  border: 1px solid pink;
+}
+
+.square {
+  float: left;
+width: 33.333333333%;
+height: 33.333333333%;
+border-width: 5px;
+border-color: #fff;
+/* -webkit-transition: background-color .1s;
+-moz-transition: background-color .1s;
+transition: background-color .1s;
+will-change: background-color,border-color;
+cursor: pointer; */
+/* }
+
+.square.left {
+  border-right-style: solid;
+}
+
+.square.top {
+  border-bottom-style: solid;
+}
+
+.square.right {
+  border-left-style: solid;
+}
+
+.square.bottom {
+  border-top-style: solid;
+}  */
+
+body {
+  color: black;
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.square {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
