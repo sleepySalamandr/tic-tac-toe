@@ -86,9 +86,14 @@ console.log(playerChoices.playerOne)
 // const found = playerChoices.playerOne.some(winning =>)
 
 
+const harder = function(e) {
+  $(".board-container").addClass("harder")
+  console.log("clicked")
+
+}
 
 
-
+$("#harder").on("click", harder)
 
 
 
