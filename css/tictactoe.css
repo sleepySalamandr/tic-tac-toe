@@ -62,24 +62,31 @@ cursor: pointer; */
   border-top-style: solid;
 }  */
 
-body {
-  color: black;
+
+.body {
+  box-sizing: border-box;
 }
 
 .board-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  /* padding: 10px; */
+  grid-template-columns: auto auto auto ;
+  padding: 10px;
   max-width: 960px;
   margin: 0 auto;
+  /* width: 25%;  */
+  position: absolute;
+  text-align
 }
 
 .square {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  /* padding: 20px; */
+  background-color: black;
+  border: 5px solid white;
+  color: white;
+  padding: 20px;
   font-size: 30px;
   text-align: center;
-  /* height: 30px;
-  width: 30px; */
+  vertical-align: center;
+  height: 80px;
+  width: 80px;
+  border-width: 3px;
 }
