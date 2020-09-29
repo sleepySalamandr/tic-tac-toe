@@ -3,8 +3,6 @@
 // on click number 2 put o in square
 // findIndex of x and find index of o and x. If x has three in row, player x wins. If o has three in a row  in a row play o wins.
 
-const player1 = "x"
-const player2 = "o"
 
 const winning = {
   horizontal1: [1, 2, 3],
@@ -34,6 +32,9 @@ $(document).ready(function(){
 let clickCounter = 0;
 
 const clicks = function(e) {
+  const player1 = $('<img>').attr("src", "css/img/x1.png");
+  const player2 = "o"
+
 
   clickCounter ++
 
@@ -51,7 +52,7 @@ const clicks = function(e) {
     console.log($(event.target).attr("id"))
     console.log("Player One")
     console.log(playerChoices.playerOne)
-    $(clickedLocationClassName).html("x")
+    $(clickedLocationClassName).append(player1).html(player1)
 
 
   } else {
@@ -66,10 +67,10 @@ const clicks = function(e) {
   for ( let keys in winning) {
 
   if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
-    console.log('Player one wins');
+    window.alert('Player one wins');
     return;
   } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
-    console.log('Player two wins')
+    window.alert('Player two wins')
     return;
   }
 }

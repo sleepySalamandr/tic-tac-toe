@@ -44,7 +44,7 @@ border-color: #fff;
 transition: background-color .1s;
 will-change: background-color,border-color;
 cursor: pointer; */
-/* }
+
 
 .square.left {
   border-right-style: solid;
@@ -60,33 +60,51 @@ cursor: pointer; */
 
 .square.bottom {
   border-top-style: solid;
-}  */
+}
 
+/* header {
+  background-image: linear-gradient(to right, white , pink, lightblue, white);
+    /* background-image: url("img/guil-wars-header.jpg"); */
+  /* height: 200px; */
+  /* margin-left: 35%;
+  margin-right: 35%; */
+  /* justify-content: center; */
 
-.body {
+header {
+  height: 150px;
+}
+
+body {
   box-sizing: border-box;
 }
 
+body {
+  /* background-image: url("img/guild-wars-2-heart-of-thorns-3.jpg"); */
+  background-image: url("img/guildcolourful.jpg");
+  background-size: cover;
+  /* background-size: cover; */
+}
 .board-container {
   display: grid;
-  grid-template-columns: auto auto auto ;
+  grid-template-columns: repeat(3, 1fr);
   padding: 10px;
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: auto;
+    background-image: url("img/spring.jpg");
+    background-size: cover;
   /* width: 25%;  */
-  position: absolute;
-  text-align
 }
 
 .square {
-  background-color: black;
-  border: 5px solid white;
+  /* background-color: black; */
+  /* border: 10px solid white; */
   color: white;
-  padding: 20px;
+  padding: 70px;
   font-size: 30px;
   text-align: center;
   vertical-align: center;
   height: 80px;
-  width: 80px;
-  border-width: 3px;
+  /* background-image: linear-gradient(to right, rgb(51, 153, 51), rgb(0, 204, 102), rgb(51, 102, 0)); */
+  /* width: 80px;  */
+
 }
