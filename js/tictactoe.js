@@ -33,7 +33,7 @@ let clickCounter = 0;
 
 const clicks = function(e) {
   const player1 = $('<img>').attr("src", "css/img/x1.png");
-  const player2 = "o"
+  const player2 = $('<img>').attr("src", "css/img/naught.png")
 
 
   clickCounter ++
@@ -60,7 +60,7 @@ const clicks = function(e) {
     playerChoices.playerTwo.push(parseInt($(event.target).attr("id")))
     console.log("Player two")
     console.log(playerChoices.playerTwo)
-    $(clickedLocationClassName).text("o")
+    $(clickedLocationClassName).append(player2).html(player2)
   }
 
   // finds if wins
