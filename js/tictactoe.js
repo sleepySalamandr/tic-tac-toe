@@ -15,15 +15,19 @@ const winning = {
   vertical2: [2, 5, 8],
   vertical3: [3, 6, 9],
 
-  diagonal1: [1, 5, 7],
+  diagonal1: [1, 5, 9],
   diagonal2: [3, 5, 7]
 }
 
-const game = {
+const playerChoices = {
   playerOne: [],
   playerTwo: [],
 }
 
+let locationTwo = "location one two"
+let locationTWO = locationTwo.split(" ").join("/")
+
+console.log(locationTWO)
 
 $(document).ready(function(){
 
@@ -33,46 +37,52 @@ const clicks = function(e) {
 
   clickCounter ++
 
-  let locationClassName = $(event.target).attr('class')
-  console.log(locationClassName)
+  let clickedLocationString = $(event.target).attr('class')
+  let clickedLocationClassName = "." + clickedLocationString.split(" ").join(".")
+  console.log(clickedLocationClassName)
+
 
 
   if (clickCounter % 2 === 0) {
     console.log(player1)
-    $(this.locationClassName).text(player1)
 
-    game.playerOne.push(parseInt($(event.target).attr("id"))) // pushes the number of the box to the array
+
+    playerChoices.playerOne.push(parseInt($(event.target).attr("id"))) // pushes the number of the box to the array
     console.log($(event.target).attr("id"))
     console.log("Player One")
-    console.log(game.playerOne)
+    console.log(playerChoices.playerOne)
+    $(clickedLocationClassName).html("x")
 
 
   } else {
     console.log(player2)
-    game.playerTwo.push(parseInt($(event.target).attr("id")))
+    playerChoices.playerTwo.push(parseInt($(event.target).attr("id")))
     console.log("Player two")
-    console.log(game.playerTwo)
+    console.log(playerChoices.playerTwo)
+    $(clickedLocationClassName).text("o")
   }
 
   // finds if wins
-  for ( let property in winning) {
+  for ( let keys in winning) {
 
-  if (winning[property].every(r => game.playerOne.includes(r))) {
+  if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
     console.log('Player one wins');
-  } else if (winning[property].every(r => game.playerTwo.includes(r))) {
+    return;
+  } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
     console.log('Player two wins')
+    return;
   }
 }
 
 }
 
 $(".board-container").on("click", clicks)
-console.log(game.playerOne)
+console.log(playerChoices.playerOne)
 
 
 // if top x 3  text includes x or player 1 - player1 wins
 
-// const found = game.playerOne.some(winning =>)
+// const found = playerChoices.playerOne.some(winning =>)
 
 
 
