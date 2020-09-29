@@ -90,10 +90,13 @@ body {
   padding: 10px;
   max-width: 700px;
   margin: auto;
-    background-image: url("img/spring.jpg");
-    background-size: cover;
+  background-image: url("img/spring.jpg");
+  background-size: cover;
+  opacity: 0.7;
   /* width: 25%;  */
 }
+
+
 
 .square {
   /* background-color: black; */
