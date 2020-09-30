@@ -20,60 +20,52 @@ const gameFunction = function(e) {
       playerChoices.playerOne.push(parseInt($(event.target).attr("id")))
 
       // Display naught or cross
+      clickedLocations.push(clickedLocationClassName)
       $(clickedLocationClassName).append(naught).html(naught)
 
 
     } else {
       playerChoices.playerTwo.push(parseInt($(event.target).attr("id")))
+      clickedLocations.push(clickedLocationClassName)
       $(clickedLocationClassName).append(cross).html(cross)
     }
 
+    const playAgain = function (e) {
+      playerChoices.playerOne = []
+      playerChoices.playerTwo = []
+      clickCounter = 0
 
+      $(clickedLocations).each(function(index){
+        $(naught).detach()
+        $(cross).detach()
+        $(".winnerAlert").css("display", "none")
 
-    if  (clickCounter >= 9) {
-    $(".winnerAlert").html(`It's a draw!`)
+      });
+
+      // location.reload()
+      console.log("clicked")
     }
+    $('.reset').on("click", playAgain)
 
-    // finds if wins
-    for ( let keys in winning) {
-  if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
-      wins.playerOne = wins.playerOne + 1
-      $(".winnerAlert").css("display", "visible").text(`Player 1 Wins!`)
-      $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
-      return;
-
-    } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
-      // window.alert('Player two wins')
-      wins.playerTwo = wins.playerTwo + 1
-      $(".winnerAlert").css("display", "visible").text(`Player 2 Wins!`)
-      $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
-      return;
-    }
-  }
-
+findWinner()
   }
   $(".board-container").on("click", gameFunction)
 
 
+  // finds if wins
+
 // Play again - resets the board
-const playAgain = function (e) {
-  playerChoices.playerOne = []
-  playerChoices.playerTwo = []
-    clickCounter = 0
-
-  $(clickedLocations).each(function(index){
-    $(naught).detach()
-    $(cross).detach()
-    $(".winnerAlert").css("display", "none")
-
-  });
-
-  // location.reload()
-  console.log("clicked")
-}
-$('.reset').on("click", playAgain)
 
 
+// const harder = function(e) {
+//   $(".board-container").addClass("harder")
+//   console.log("clicked")
+//
+// }
+//
+//
+// $("#harder").on("click", harder)
+//
 
 
 });

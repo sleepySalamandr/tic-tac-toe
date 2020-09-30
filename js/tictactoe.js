@@ -68,21 +68,6 @@
 //     $(clickedLocationClassName).append(player2).html(player2)
 //   }
 //
-//   // const reset = function (clickCounter) {
-//   //   playerChoices.playerOne = []
-//   //   playerChoices.playerTwo = []
-//   //     clickCounter = 0
-//   //
-//   //   $(clickedLocations).each(function(index){
-//   //     $(player2).detach()
-//   //     $(player1).detach()
-//   //     $(".winnerAlert").detach()
-//   //
-//   //   });
-//   //
-//   //   // location.reload()
-//   //   console.log("clicked")
-//   // }
 //
 //   // Play again - resets the board
 //   const playAgain = function (e) {

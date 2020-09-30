@@ -28,3 +28,27 @@ const wins = {
 
 // number of clicks
 let clickCounter = 0;
+
+const winnerAlert = $(".winnerAlert").css("display", "visible")
+
+const findWinner = function() {  for ( let keys in winning) {
+
+  if  (clickCounter >= 9) {
+  $(".winnerAlert").html(`It's a draw!`)
+  }
+
+if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
+    wins.playerOne = wins.playerOne + 1
+    $(".winnerAlert").css("display", "visible").text(`Player 1 Wins!`)
+    $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
+    return;
+
+  } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
+    // window.alert('Player two wins')
+    wins.playerTwo = wins.playerTwo + 1
+    $(".winnerAlert").css("display", "visible").text(`Player 2 Wins!`)
+    $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
+    return;
+  }
+}
+}
