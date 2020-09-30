@@ -76,6 +76,7 @@ const clicks = function(e) {
     $(clickedLocations).each(function(index){
       $(player2).detach()
       $(player1).detach()
+      $(".winnerAlert").detach()
     });
 
     // location.reload()
@@ -95,7 +96,7 @@ const clicks = function(e) {
   } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
     // window.alert('Player two wins')
     wins.playerTwo += 1
-    $(".winnerAlert").css("display", "visible").text(`Player 1 Wins!`)
+    $(".winnerAlert").css("display", "visible").text(`Player 2 Wins!`)
     $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
     return;
   }
