@@ -19,14 +19,15 @@ const winning = {
 
 const playerChoices = {
   playerOne: [],
-  playerTwo: [],
+  playerTwo: []
 }
 
+const clickedLocations = []
 
-let locationTwo = "location one two"
-let locationTWO = locationTwo.split(" ").join("/")
-
-console.log(locationTWO)
+const wins = {
+  playerOne: 0,
+  playerTwo: 0
+}
 
 $(document).ready(function(){
 
@@ -53,6 +54,7 @@ const clicks = function(e) {
     console.log($(event.target).attr("id"))
     console.log("Player One")
     console.log(playerChoices.playerOne)
+    clickedLocations.push(clickedLocationClassName)
     $(clickedLocationClassName).append(player1).html(player1)
 
 
@@ -61,6 +63,7 @@ const clicks = function(e) {
     playerChoices.playerTwo.push(parseInt($(event.target).attr("id")))
     console.log("Player two")
     console.log(playerChoices.playerTwo)
+    clickedLocations.push(clickedLocationClassName)
     $(clickedLocationClassName).append(player2).html(player2)
   }
 
@@ -69,24 +72,33 @@ const clicks = function(e) {
 
   if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
     window.alert('Player one wins');
+    // wins.playerOne += 1
+    $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
     return;
+
   } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
-    window.alert('Player two wins')
+    // window.alert('Player two wins')
+    wins.playerTwo += 1
+    $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
     return;
   }
-  const reset = function (e) {
-    // playerChoices.clear()
-    // playerChoices.playerOne = []
-    // playerChoices.playerTwo = []
-
-    location.reload()
-    console.log(playerChoices.playerTwo)
-    console.log("clicked")
-  }
-
-
-  $('.reset').on("click", reset)
 }
+
+const reset = function (e) {
+  playerChoices.playerOne = []
+  playerChoices.playerTwo = []
+
+  $(clickedLocations).each(function(index){
+    $(player2).detach()
+    $(player1).detach()
+  });
+
+  // location.reload()
+  console.log("clicked")
+}
+$('.reset').on("click", reset)
+
+
 
 }
 
@@ -107,8 +119,6 @@ const harder = function(e) {
 
 
 $("#harder").on("click", harder)
-
-
 
 
 

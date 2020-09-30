@@ -37,6 +37,7 @@ body {
   /* background-size: cover; */
   font-family: 'Alegreya', serif;
 }
+
 .board-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -98,6 +99,29 @@ body {
   /* background-image: linear-gradient(to right, rgb(51, 153, 51), rgb(0, 204, 102), rgb(51, 102, 0)); */
   /* width: 80px;  */
 
+}
+
+.score-board {
+}
+
+.player1-score {
+  display: inline-block;
+  bottom: 50%;
+  margin-top: 0px;
+  position: fixed;
+  right: 81%;
+  padding: 5px;
+  border: 1px solid black;
+
+}
+
+.player2-score {
+  display: inline-block;
+  bottom: 50%;
+  margin-top: 0px;
+  position: fixed;
+  left: 81%;
+  text-align: center;
 }
 
 .button-container {
