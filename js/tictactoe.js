@@ -22,6 +22,7 @@ const playerChoices = {
   playerTwo: [],
 }
 
+
 let locationTwo = "location one two"
 let locationTWO = locationTwo.split(" ").join("/")
 
@@ -73,6 +74,18 @@ const clicks = function(e) {
     window.alert('Player two wins')
     return;
   }
+  const reset = function (e) {
+    // playerChoices.clear()
+    // playerChoices.playerOne = []
+    // playerChoices.playerTwo = []
+
+    location.reload()
+    console.log(playerChoices.playerTwo)
+    console.log("clicked")
+  }
+
+
+  $('.reset').on("click", reset)
 }
 
 }
@@ -99,38 +112,9 @@ $("#harder").on("click", harder)
 
 
 
-// $(".square.top.left").on("click", function () {
-//   console.log("box clicked")
-//   if (clickCounter % 2 === 0) {
-//     text = "x"
-//     $(".square.top.left").text(text)
-//     console.log(text)
-//   } else {
-//     // put o in box that was clicked
-//     text = "o"
-//     $(".square.top.left").text(text)
-//     console.log(text)
-//   }
-// })
-
-// $(".square.top.left").on("click", clicks)
-
-
-
-
-
-
-// const displayXO = function (e) {
-//   if (clickCounter % 2 === 0) {
-//     // put x in box that was clicked
-//     locationClassName.html("x")
-//     console.log("working")
-//   } else {
-//     // put o in box that was clicked
-//   }
-// }
-// on click populate the box that was clicked with an x if it is odd number of clicks or o if it is even number of clicks.
-// could use a click counter or
-
-
 });
+
+// reset playerChoices
+// clear html
+// record who won
+// add a button to finish and then which ever number is higher like player 1; 2, player 2: 5 =- player 2 wins
