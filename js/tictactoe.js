@@ -19,7 +19,7 @@ const winning = {
 
 const playerChoices = {
   playerOne: [],
-  playerTwo: []
+  playerTwo: [],
 }
 
 const clickedLocations = []
@@ -68,34 +68,66 @@ const clicks = function(e) {
     $(clickedLocationClassName).append(player2).html(player2)
   }
 
+  // const reset = function (clickCounter) {
+  //   playerChoices.playerOne = []
+  //   playerChoices.playerTwo = []
+  //     clickCounter = 0
+  //
+  //   $(clickedLocations).each(function(index){
+  //     $(player2).detach()
+  //     $(player1).detach()
+  //     $(".winnerAlert").detach()
+  //
+  //   });
+  //
+  //   // location.reload()
+  //   console.log("clicked")
+  // }
+
   // Play again - resets the board
-  const reset = function (e) {
+  const playAgain = function (e) {
     playerChoices.playerOne = []
     playerChoices.playerTwo = []
+      clickCounter = 0
 
     $(clickedLocations).each(function(index){
       $(player2).detach()
       $(player1).detach()
-      $(".winnerAlert").detach()
+      $(".winnerAlert").css("display", "none")
+
     });
 
     // location.reload()
     console.log("clicked")
   }
-  $('.reset').on("click", reset)
+  $('.reset').on("click", playAgain)
+
+  if  (clickCounter >= 9) {
+  $(".winnerAlert").html(`It's a draw!`)
+  // playerChoices.playerOne = []
+  // playerChoices.playerTwo = []
+  //   clickCounter = 0
+  //
+  // $(clickedLocations).each(function(index){
+  //   $(player2).detach()
+  //   $(player1).detach()
+  //   $(".winnerAlert").detach()
+  //
+  // })
+
+  }
 
   // finds if wins
   for ( let keys in winning) {
-
-  if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
-    wins.playerOne += 1
+if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
+    wins.playerOne = wins.playerOne + 1
     $(".winnerAlert").css("display", "visible").text(`Player 1 Wins!`)
     $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
     return;
 
   } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
     // window.alert('Player two wins')
-    wins.playerTwo += 1
+    wins.playerTwo = wins.playerTwo + 1
     $(".winnerAlert").css("display", "visible").text(`Player 2 Wins!`)
     $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
     return;
