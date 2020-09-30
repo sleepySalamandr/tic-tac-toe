@@ -38,6 +38,11 @@ body {
   font-family: 'Alegreya', serif;
 }
 
+.winnerAlert {
+  background-color: green;
+  display: hidden;
+}
+
 .board-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

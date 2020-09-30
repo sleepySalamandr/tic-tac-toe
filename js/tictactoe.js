@@ -29,6 +29,7 @@ const wins = {
   playerTwo: 0
 }
 
+
 $(document).ready(function(){
 
 let clickCounter = 0;
@@ -67,36 +68,38 @@ const clicks = function(e) {
     $(clickedLocationClassName).append(player2).html(player2)
   }
 
+  // Play again - resets the board
+  const reset = function (e) {
+    playerChoices.playerOne = []
+    playerChoices.playerTwo = []
+
+    $(clickedLocations).each(function(index){
+      $(player2).detach()
+      $(player1).detach()
+    });
+
+    // location.reload()
+    console.log("clicked")
+  }
+  $('.reset').on("click", reset)
+
   // finds if wins
   for ( let keys in winning) {
 
   if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
-    window.alert('Player one wins');
-    // wins.playerOne += 1
+    wins.playerOne += 1
+    $(".winnerAlert").css("display", "visible").text(`Player 1 Wins!`)
     $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
     return;
 
   } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
     // window.alert('Player two wins')
     wins.playerTwo += 1
+    $(".winnerAlert").css("display", "visible").text(`Player 1 Wins!`)
     $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
     return;
   }
 }
-
-const reset = function (e) {
-  playerChoices.playerOne = []
-  playerChoices.playerTwo = []
-
-  $(clickedLocations).each(function(index){
-    $(player2).detach()
-    $(player1).detach()
-  });
-
-  // location.reload()
-  console.log("clicked")
-}
-$('.reset').on("click", reset)
 
 
 
