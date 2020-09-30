@@ -17,7 +17,7 @@ const gameFunction = function(e) {
     if (clickCounter % 2 === 0) {
 
       // pushes the number of the box to the array
-      playerChoices.playerOne.push(parseInt($(event.target).attr("id")))
+      playerChoices.playerTwo.push(parseInt($(event.target).attr("id")))
 
       // Display naught or cross
       clickedLocations.push(clickedLocationClassName)
@@ -25,7 +25,7 @@ const gameFunction = function(e) {
 
 
     } else {
-      playerChoices.playerTwo.push(parseInt($(event.target).attr("id")))
+      playerChoices.playerOne.push(parseInt($(event.target).attr("id")))
       clickedLocations.push(clickedLocationClassName)
       $(clickedLocationClassName).append(cross).html(cross)
     }
@@ -38,7 +38,7 @@ const gameFunction = function(e) {
       $(clickedLocations).each(function(index){
         $(naught).detach()
         $(cross).detach()
-        $(".winnerAlert").css("display", "none")
+        $(".winnerAlert").text(``)
 
       });
 
@@ -57,15 +57,15 @@ findWinner()
 // Play again - resets the board
 
 
-// const harder = function(e) {
-//   $(".board-container").addClass("harder")
-//   console.log("clicked")
-//
-// }
-//
-//
-// $("#harder").on("click", harder)
-//
+const harder = function(e) {
+  $(".board-container").addClass("harder")
+  console.log("clicked")
+
+}
+
+
+$("#harder").on("click", harder)
+
 
 
 });

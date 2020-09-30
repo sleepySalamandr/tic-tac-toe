@@ -14,14 +14,6 @@
   border-top-style: solid;
 }
 
-/* header {
-  background-image: linear-gradient(to right, white , pink, lightblue, white);
-    /* background-image: url("img/guil-wars-header.jpg"); */
-  /* height: 200px; */
-  /* margin-left: 35%;
-  margin-right: 35%; */
-  /* justify-content: center; */
-
 header {
   height: 150px;
 }
@@ -31,16 +23,20 @@ body {
 }
 
 body {
-  /* background-image: url("img/guild-wars-2-heart-of-thorns-3.jpg"); */
   background-image: url("img/guildcolourful.jpg");
   background-size: cover;
-  /* background-size: cover; */
   font-family: 'Alegreya', serif;
 }
 
 .winnerAlert {
-  background-color: green;
-  display: hidden;
+  /* background-image: linear-gradient(45deg, #d6cfb0 0%, #e489b2 100%); */
+  text-align: center;
+  /* color: mix(#fff, #e91e63, 85%); */
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow: 2px 2px #87b8dd;
+  color:  black;
+  /* #87b8dd #62a98d*/
 }
 
 .board-container {
@@ -50,16 +46,14 @@ body {
   max-width: 700px;
   margin: auto;
   margin-top: 50px;
-  /* background-image: url("img/spring.jpg"); */
-  /* background: url("img/spring.jpg"); */
+  background-size: cover;
+  opacity:  0.7;
     animation-name: spin;
     animation-duration: 1s;
     animation-iteration-count: 2s;
     animation-timing-function: linear;
-  background-size: cover;
-   opacity:  0.7;
-  /* opacity: 0.7; */
-  /* width: 25%;  */
+
+
 
 }
   @keyframes spin {
@@ -107,6 +101,9 @@ body {
 }
 
 .score-board {
+  text-shadow: 2px 2px gray;
+  color: black;
+  font-size: 1.5em;
 }
 
 .player1-score {
@@ -115,6 +112,7 @@ body {
   margin-top: 0px;
   position: fixed;
   right: 81%;
+  text-align: center;
   padding: 5px;
 }
 
@@ -125,7 +123,7 @@ body {
   position: fixed;
   left: 81%;
   text-align: center;
-    padding: 5px;
+  padding: 5px;
 }
 
 .button-container {
@@ -158,6 +156,7 @@ button {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   font-family: 'Alegreya', serif;
+
 }
 }
 
