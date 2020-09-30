@@ -4,7 +4,7 @@ $(document).ready(function(){
 const gameFunction = function(e) {
 
   // Naughts and crosses img
-  let cross = $('<img>').attr("src", "css/img/x1.png");
+  let cross = $('<img>').attr("src", "css/img/x-64.png");
   let naught = $('<img>').attr("src", "css/img/naught.png")
 
   clickCounter ++
@@ -30,6 +30,7 @@ const gameFunction = function(e) {
       $(clickedLocationClassName).append(cross).html(cross)
     }
 
+// Play again - resets the board
     const playAgain = function (e) {
       playerChoices.playerOne = []
       playerChoices.playerTwo = []
@@ -54,7 +55,6 @@ findWinner()
 
   // finds if wins
 
-// Play again - resets the board
 
 
 const harder = function(e) {
