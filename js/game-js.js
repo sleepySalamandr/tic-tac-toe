@@ -62,6 +62,6 @@ const findWinner = function() {
       $('.board-container').addClass("disable-click");
 
     return;
-  }
-}
-}
+  };
+};
+};
