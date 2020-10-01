@@ -1,52 +1,24 @@
-A read me file that describes the project
-title of the project
-which libraries you used
-bugs you have to deal with
-instructions
-licensing terms
-special thanks
+## Project #0:
+### Tic Tac Toe
 
-# Intro to Markdown
+#### [Link to game](https://brittanylcrocker.github.io/tic-tac-toe)
 
-This is some mark down.
 
-## Sub Headings
-### Subsub Headings
+![Picture of tic-tace-toe game](css/img/game.png)
 
-You can have *asteriks* also _underscores_
 
-You can be very **strong** __strong__
+#### Built with:
+- Javascript
+- jQuery
+- CSS
+- HTML
 
-or ***this*** ___this____
 
-## Lists
+#### Build Status
+###### 1 bug persisting.
+*Board container being clicked in wrong position results in the ".board-container" div emptying, and ".square" divs disappear. Commonly happens in "Make it harder" mode*
 
-* Groucho
-* Harpo
-* Chico
 
-- Also work
+  ![Picture of aforementioned bug](css/img/bug.png)
 
-1. lightblue
-2. orange
-
-## Hyper Links
-[Here is a link to the w3c ](http://w3c.org)
-
-## Images
-
-![Kitten picture](http://placekitten.com/120/150)
-
-## Code Formatting
-In JS we often use the `document` variable
-
-``` javascript
-const hey = function () {
-  console.log("hi")
-}
-
-```
-
-## Blockquotes
-
-> Ham is to hamster as Java is to Javascript
+#### Enjoy!
