@@ -59,8 +59,13 @@ findWinner()
   }
   $(".board-container").on("click", gameFunction)
 
+  // Make harder button / makes board spin
+  const harder = function(e) {
 
-  // finds if wins
+    $(".board-container").addClass("harder")
 
+  }
+
+  $("#harder").on("click", harder)
 
 });
