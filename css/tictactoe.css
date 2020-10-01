@@ -150,6 +150,11 @@ button {
   font-family: 'Alegreya', serif;
 }
 
+button:hover {
+  background-color: black;
+  color: white;
+}
+
 .harder {
   background-size: cover;
   opacity:  0.7;
