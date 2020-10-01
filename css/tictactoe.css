@@ -1,44 +1,21 @@
-.square.left {
-  border-right-style: solid;
-}
-
-.square.top {
-  border-bottom-style: solid;
-}
-
-.square.right {
-  border-left-style: solid;
-}
-
-.square.bottom {
-  border-top-style: solid;
-}
-
-header {
-  height: 150px;
-}
-
-body {
-  box-sizing: border-box;
-}
-
 body {
   background-image: url("img/guildcolourful.jpg");
   background-size: cover;
   font-family: 'Alegreya', serif;
+  box-sizing: border-box;
 }
 
 .winnerAlert {
-  /* background-image: linear-gradient(45deg, #d6cfb0 0%, #e489b2 100%); */
   text-align: center;
   position: relative;
-  /* color: mix(#fff, #e91e63, 85%); */
   font-size: 3em;
   font-weight: 900;
   text-shadow: 2px 2px #87b8dd;
   color:  black;
 }
 
+
+/* Board */
 .board-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -63,29 +40,26 @@ body {
     }
 }
 
-.harder {
-      animation-name: spin;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    background-size: cover;
-     opacity:  0.7;
-
-  }
-    @keyframes spin {
-      from {
-          transform:rotate(0deg);
-      }
-      to {
-          transform:rotate(360deg);
-      }
-  }
 
 
+/* Square */
+.square.left {
+  border-right-style: solid;
+}
+
+.square.top {
+  border-bottom-style: solid;
+}
+
+.square.right {
+  border-left-style: solid;
+}
+
+.square.bottom {
+  border-top-style: solid;
+}
 
 .square {
-  /* background-color: black; */
-  /* border: 10px solid white; */
   position: relative;
   color: white;
   padding: 70px;
@@ -95,8 +69,6 @@ body {
   height: 80px;
   opacity:  1;
   min-width: 0;
-  /* background-image: linear-gradient(to right, rgb(51, 153, 51), rgb(0, 204, 102), rgb(51, 102, 0)); */
-  /* width: 80px;  */
 
 }
 
@@ -104,6 +76,8 @@ img {
   max-width: 100%;
 }
 
+
+/*  Score Board */
 .score-board {
   text-shadow: 1px 1px gray;
   color: black;
@@ -143,6 +117,8 @@ img {
   vertical-align: bottom;
 }
 
+/* Buttons */
+
 .button-container {
   position: relative;
   text-align: center;
@@ -168,15 +144,30 @@ button {
   text-transform: uppercase;
   z-index: 1;
   box-shadow: -0.5em 0.5em rgba(16, 24, 50, 0);
-  /* transform-origin: left bottom; */
   -webkit-transition: all 200ms ease-in-out;
   -moz-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   font-family: 'Alegreya', serif;
-
 }
 
+.harder {
+  background-size: cover;
+  opacity:  0.7;
+      animation-name: spin;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+  }
+    @keyframes spin {
+      from {
+          transform:rotate(0deg);
+      }
+      to {
+          transform:rotate(360deg);
+      }
+  }
 
 .disable-click {
   pointer-events: none;
