@@ -43,6 +43,7 @@ const gameFunction = function(e) {
         $(".winnerAlert").text(``)
         $(".board-container").removeClass("harder")
         $(".board-container").removeClass("disable-click");
+        $(".board-container").removeClass("draw")
 
 
       });

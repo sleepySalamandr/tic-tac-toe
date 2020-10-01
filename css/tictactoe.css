@@ -31,15 +31,16 @@ body {
 .winnerAlert {
   /* background-image: linear-gradient(45deg, #d6cfb0 0%, #e489b2 100%); */
   text-align: center;
+  position: relative;
   /* color: mix(#fff, #e91e63, 85%); */
   font-size: 3em;
   font-weight: 900;
   text-shadow: 2px 2px #87b8dd;
   color:  black;
-  /* #87b8dd #62a98d*/
 }
 
 .board-container {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 10px;
@@ -52,8 +53,6 @@ body {
     animation-duration: 1s;
     animation-iteration-count: 2s;
     animation-timing-function: linear;
-
-
 
 }
   @keyframes spin {
@@ -88,6 +87,7 @@ body {
 .square {
   /* background-color: black; */
   /* border: 10px solid white; */
+  position: relative;
   color: white;
   padding: 70px;
   font-size: 30px;
@@ -95,35 +95,53 @@ body {
   vertical-align: center;
   height: 80px;
   opacity:  1;
+  min-width: 0;
   /* background-image: linear-gradient(to right, rgb(51, 153, 51), rgb(0, 204, 102), rgb(51, 102, 0)); */
   /* width: 80px;  */
 
 }
 
+img {
+  max-width: 100%;
+}
+
 .score-board {
-  text-shadow: 2px 2px gray;
+  text-shadow: 1px 1px gray;
   color: black;
   font-size: 1.5em;
+
 }
 
 .player1-score {
   display: inline-block;
   bottom: 50%;
   margin-top: 0px;
-  position: fixed;
+  position: absolute;
   right: 81%;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
+  background-image: url('img/spring.jpg');
+  background-size: cover;
+  border-radius: 70%;
+  height: 100px;
+  width: 100px;
+  vertical-align: bottom;
 }
 
 .player2-score {
   display: inline-block;
   bottom: 50%;
   margin-top: 0px;
-  position: fixed;
+  position: absolute;
   left: 81%;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
+  background-image: url('img/spring.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  vertical-align: bottom;
 }
 
 .button-container {

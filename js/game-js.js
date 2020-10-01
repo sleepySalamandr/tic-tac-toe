@@ -33,6 +33,7 @@ const findWinner = function() {  for ( let keys in winning) {
 
   if  (clickCounter >= 9) {
   $(".winnerAlert").html(`It's a draw!`)
+
   }
 
 if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numberOfSquare))) {
@@ -40,7 +41,6 @@ if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numbe
     $(".winnerAlert").text(`Player 1 Wins!`)
     $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
     $('.board-container').addClass("disable-click")
-
     return;
 
   } else if (winning[keys].every(numberOfSquare => playerChoices.playerTwo.includes(numberOfSquare))) {
