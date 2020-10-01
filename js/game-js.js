@@ -39,6 +39,7 @@ if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numbe
     wins.playerOne = wins.playerOne + 1
     $(".winnerAlert").text(`Player 1 Wins!`)
     $(".player1-score").html(`Player 1: <br/> ${wins.playerOne}`)
+    $('.board-container').addClass("disable-click")
 
     return;
 
@@ -47,6 +48,7 @@ if (winning[keys].every(numberOfSquare => playerChoices.playerOne.includes(numbe
     wins.playerTwo = wins.playerTwo + 1
     $(".winnerAlert").text(`Player 2 Wins!`)
     $(".player2-score").html(`Player 2: <br/> ${wins.playerTwo}`)
+    $('.board-container').addClass("disable-click")
     return;
   }
 }

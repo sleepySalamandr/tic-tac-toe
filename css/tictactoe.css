@@ -158,6 +158,8 @@ button {
   font-family: 'Alegreya', serif;
 
 }
-}
 
-/* The alert message box */
+
+.disable-click {
+  pointer-events: none;
+}

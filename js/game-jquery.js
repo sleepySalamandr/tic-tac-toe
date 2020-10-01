@@ -13,6 +13,7 @@ const gameFunction = function(e) {
     let clickedLocationString = $(event.target).attr('class')
     let clickedLocationClassName = "." + clickedLocationString.split(" ").join(".")
 
+
 // Display naught or cross
     if (clickCounter % 2 === 0) {
 
@@ -40,15 +41,16 @@ const gameFunction = function(e) {
         $(naught).detach()
         $(cross).detach()
         $(".winnerAlert").text(``)
+        $(".board-container").removeClass("harder")
+        $(".board-container").removeClass("disable-click");
+
 
       });
-
-      // location.reload()
-      console.log("clicked")
     }
     $('.reset').on("click", playAgain)
 
 findWinner()
+console.log(clickedLocationClassName)
   }
   $(".board-container").on("click", gameFunction)
 
