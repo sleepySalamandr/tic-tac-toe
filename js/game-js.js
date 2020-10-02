@@ -32,19 +32,19 @@ playerTwo = {
   winnerAlert: `Player 2 Wins!`,
 };
 
-// Number of clicks
+// Number of clicks - increments on each click - used to find if draw.
 let clickCounter = 0;
 
 const findWinner = function() {
 
-// For every key in object "winning"
+// Iterates through every key in object "winning"
   for ( let keys in winning) {
 
 
     if (clickCounter >= 9) {
       $(".winnerAlert").html(`It's a draw!`);
 
-// If players choice array includes every value in key's array
+// If players choices array includes every value in key's array
   } else if ( winning[keys].every( numberOfSquare => playerOne.choices.includes( numberOfSquare ))) {
       wins.playerOne = wins.playerOne + 1;
 
